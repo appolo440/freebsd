@@ -50,3 +50,17 @@ cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 ntpdate ru.pool.ntp.org
 ```
+
+## Если машина работает под управлением VMWare
+
+```
+cd /usr/ports/emulators/open-vm-tools-nox11/
+make config-recursive
+make install clean
+```
+В файл /etc/rc.conf внесите следующие измнения:
+
+```
+vmware_guestd_enable="YES"
+vmware_kmod_enable="YES"
+```
